@@ -5,7 +5,7 @@
 #pragma once
 #include "afxcmn.h"
 #include "afxeditbrowsectrl.h"
-
+#include "DicomNet.h"
 
 // CDicomToolDlg ¶Ô»°¿ò
 class CDicomToolDlg : public CBCGPDialog
@@ -41,4 +41,9 @@ public:
 	CString m_port;
 	CString m_RemoteAEtitle;
 	CMFCEditBrowseCtrl m_FileCtrl;
+	afx_msg void OnBnClickedBtndisconnect();
+
+private:
+	DicomNet* p_Connect;
+
 };

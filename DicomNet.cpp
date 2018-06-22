@@ -192,3 +192,8 @@ bool DicomNet::DisConnect()
 	m_bConnected = false;
 	return true;
 }
+
+T_ASC_Association * DicomNet::GetCurrentAssoc()
+{
+	return assoc;
+}

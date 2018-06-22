@@ -47,5 +47,8 @@ public:
 	static void LogMsg(string logFile, string msg);
 	// 断开连接
 	bool DisConnect();
+
+	//返回当前连接指针
+	T_ASC_Association* GetCurrentAssoc();
 };
 

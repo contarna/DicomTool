@@ -122,3 +122,32 @@
 [2018-01-12 11:20:11] ASC_setPresentationAddresses: loaclhost:127.0.0.1 peerhost:127.0.0.1:5104
 [2018-01-12 11:20:11] 0006:0301 DUL Association Rejected
 
+[2018-06-22 14:48:16] ASC_initializeNetwork¡­¡­ timeout limit 1000 ms
+[2018-06-22 14:48:16] ASC_createAssociationParameters¡­¡­ MAXPDU 16384
+[2018-06-22 14:48:16] ASC_setAPTitles peerAE: outAE:ANY
+[2018-06-22 14:48:16] ASC_setPresentationAddresses: loaclhost:127.0.0.1 peerhost:0.0.0.0:0
+[2018-06-22 14:48:17] 0006:031b Failed to establish association
+0006:0317 Peer aborted Association (or never connected)
+0006:031c TCP Initialization Error: No error
+
+[2018-06-22 14:56:17] ASC_initializeNetwork¡­¡­ timeout limit 1000 ms
+[2018-06-22 14:56:17] ASC_createAssociationParameters¡­¡­ MAXPDU 16384
+[2018-06-22 14:56:17] ASC_setAPTitles peerAE:RIS outAE:ANY
+[2018-06-22 14:56:17] ASC_setPresentationAddresses: loaclhost:127.0.0.1 peerhost:127.0.0.1:1234
+[2018-06-22 14:56:18] 0006:031b Failed to establish association
+0006:0317 Peer aborted Association (or never connected)
+0006:031c TCP Initialization Error: No error
+
+[2018-06-22 14:56:25] ASC_initializeNetwork¡­¡­ timeout limit 1000 ms
+[2018-06-22 14:56:25] ASC_createAssociationParameters¡­¡­ MAXPDU 16384
+[2018-06-22 14:56:25] ASC_setAPTitles peerAE:RIS outAE:ANY
+[2018-06-22 14:56:25] ASC_setPresentationAddresses: loaclhost:127.0.0.1 peerhost:127.0.0.1:1234
+[2018-06-22 15:07:28] ASC_initializeNetwork¡­¡­ timeout limit 1000 ms
+[2018-06-22 15:07:28] ASC_createAssociationParameters¡­¡­ MAXPDU 16384
+[2018-06-22 15:07:28] ASC_setAPTitles peerAE:RIS outAE:ANY
+[2018-06-22 15:07:28] ASC_setPresentationAddresses: loaclhost:127.0.0.1 peerhost:127.0.0.1:1234
+[2018-06-22 15:07:31] Diconnect¡­¡­ 
+[2018-06-22 15:07:31] ASC_releaseAssociation¡­¡­ 
+[2018-06-22 15:07:31] ASC_destroyAssociation¡­¡­ 
+[2018-06-22 15:07:31] ASC_dropNetwork¡­¡­ 
+[2018-06-22 15:07:52] Diconnect¡­¡­ 

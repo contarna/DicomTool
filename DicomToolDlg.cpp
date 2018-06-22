@@ -6,8 +6,7 @@
 #include "DicomTool.h"
 #include "DicomToolDlg.h"
 #include "afxdialogex.h"
-//#include "DcmTK.h"
-#include "DicomNet.h"
+
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -56,6 +55,7 @@ CDicomToolDlg::CDicomToolDlg(CWnd* pParent /*=NULL*/)
 	: CBCGPDialog(IDD_DICOMTOOL_DIALOG, pParent)
 	, m_port(_T(""))
 	, m_RemoteAEtitle(_T(""))
+	, p_Connect(nullptr)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 	EnableVisualManagerStyle(TRUE, TRUE);
@@ -76,6 +76,7 @@ BEGIN_MESSAGE_MAP(CDicomToolDlg, CBCGPDialog)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDOK, &CDicomToolDlg::OnBnClickedOk)
 	ON_BN_CLICKED(IDC_BUTTON1, &CDicomToolDlg::OnBnClickedButton1)
+	ON_BN_CLICKED(IDC_BtnDisConnect, &CDicomToolDlg::OnBnClickedBtndisconnect)
 END_MESSAGE_MAP()
 
 
@@ -111,6 +112,7 @@ BOOL CDicomToolDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO: 在此添加额外的初始化代码
+	p_Connect = new DicomNet();
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
@@ -191,7 +193,7 @@ void CDicomToolDlg::OnTcnSelchangeTabLoaddicom(NMHDR *pNMHDR, LRESULT *pResult)
 	*pResult = 0;
 }
 
-	DicomNet* net = new DicomNet();
+
 void CDicomToolDlg::OnBnClickedButton1()
 {
 	UpdateData(TRUE);
@@ -202,9 +204,19 @@ void CDicomToolDlg::OnBnClickedButton1()
 	m_hostIP.GetAddress(dwIP);
 	ia.S_un.S_addr = htonl(dwIP);
 
-	net->connectCfg.IP = inet_ntoa(ia);
-	net->connectCfg.Port = atoi(m_port);
-	net->connectCfg.PeerAE = m_RemoteAEtitle;
-	net->connectCfg.OurAE = "ANY";
-	net->Connect();
+	p_Connect->connectCfg.IP = inet_ntoa(ia);
+	p_Connect->connectCfg.Port = atoi(m_port);
+	p_Connect->connectCfg.PeerAE = m_RemoteAEtitle;
+	p_Connect->connectCfg.OurAE = "ANY";
+	p_Connect->Connect();
+}
+
+
+void CDicomToolDlg::OnBnClickedBtndisconnect()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	if (p_Connect != nullptr)
+	{
+		p_Connect->DisConnect();
+	}
 }
